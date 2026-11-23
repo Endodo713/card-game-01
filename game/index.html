@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember Pact — a duel card game</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <div id="title-screen">
+    <div class="title-inner">
+      <div class="title-suits"><span class="s-flame">▲</span><span class="s-tide">●</span><span class="s-thorn">◆</span><span class="s-storm">★</span></div>
+      <h1>EMBER PACT</h1>
+      <p class="tagline">A duel of cinders. Play two cards of one suit and its Resonance wakes.</p>
+      <button id="play-btn" class="big-btn">▶&nbsp; Play</button>
+      <div class="howto">
+        <p><b>Goal:</b> reduce the enemy hero to 0. You have 30 life; so does Rook.</p>
+        <p><b>Play:</b> click a card to play it (or press 1–7). Cards cost embers; your embers refill every turn.</p>
+        <p><b>Resonance:</b> two cards of the same suit in one turn trigger a bonus — ▲ Flame burns, ● Tide draws, ◆ Thorn shields, ★ Storm refills embers.</p>
+        <p><b>Guard:</b> Guard creatures take your creatures' blows before their hero does.</p>
+        <p><b>Keys:</b> 1–7 play a card · Space ends your turn · M mutes.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="table" class="hidden">
+    <div id="resonance"></div>
+    <div class="side enemy-side">
+      <div id="enemy-vitals" class="vitals"></div>
+      <div id="enemy-hand" class="hand enemy-hand"></div>
+      <div id="enemy-board" class="board"></div>
+    </div>
+    <div class="middle">
+      <div id="turn-label">Turn 1</div>
+      <div id="log"></div>
+      <button id="end-turn" class="big-btn">End Turn (Space)</button>
+    </div>
+    <div class="side player-side">
+      <div id="player-board" class="board"></div>
+      <div id="player-hand" class="hand player-hand"></div>
+      <div id="player-vitals" class="vitals"></div>
+    </div>
+    <button id="mute-btn" class="mute">🔊 Sound on</button>
+  </div>
+
+  <div id="end-screen" class="hidden">
+    <div class="end-inner">
+      <h1 id="end-title">VICTORY</h1>
+      <p id="end-sub"></p>
+      <button id="again-btn" class="big-btn">↻&nbsp; Play Again</button>
+    </div>
+  </div>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
